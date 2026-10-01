@@ -1,0 +1,48 @@
+{
+  "name": "@lyncsystems/feedlab",
+  "version": "0.1.0",
+  "description": "Command-line client for FeedLab — manage feedback and test sessions from your terminal.",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "https://feedlab.cloud/docs/api",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lync-systems-mw/feedlab-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lync-systems-mw/feedlab-cli/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "feedlab",
+    "feedback",
+    "cli",
+    "qa",
+    "testing"
+  ],
+  "bin": {
+    "feedlab": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && chmod +x dist/index.js",
+    "dev": "tsc -p tsconfig.json --watch",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "open": "^10.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2"
+  }
+}
